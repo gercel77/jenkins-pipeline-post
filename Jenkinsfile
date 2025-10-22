@@ -39,6 +39,11 @@ pipeline {
         success {
         // One or more steps need to be included within each condition's block.
         echo 'the deployment has worked'
+        slackSend(
+            channel: '#devops'
+            color: '#36a64f'
+            message: "*BUILD EXITOSO*: '${env.JOB_NAME}' #${env.BUILD_NUMBER} " 
+        )
        }
        failure {
         // One or more steps need to be included within each condition's block.
