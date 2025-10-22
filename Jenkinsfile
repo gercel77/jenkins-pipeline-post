@@ -41,7 +41,7 @@ pipeline {
         echo 'the deployment has worked'
         slackSend(
             channel: '#devops'
-            color: '#36a64f'
+            color: 'good'
             message: "*BUILD EXITOSO*: '${env.JOB_NAME}' #${env.BUILD_NUMBER} " 
         )
        }
